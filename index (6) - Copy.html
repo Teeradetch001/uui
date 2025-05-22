@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เรซูเม่ของฉัน</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Teeradetch Meetha</h1>
+    <p>Web Developer | นักออกแบบเว็บไซต์ | นักพัฒนาเซิฟเวอร์ HTML/CSS/C++/C#</p>
+  </header>
+
+  <div class="container">
+    <section class="card animate">
+      <h2>ข้อมูลติดต่อ</h2>
+      <p>📧 teeradetchmeetha@gmail.com<br>📞 063-845-9429<br>📍 ชัยภูมิ, ประเทศไทย</p>
+    </section>
+
+    <section class="card animate">
+      <h2>ประสบการณ์ทำงาน</h2>
+      <p><strong>Developer onilne</strong></p>
+      <ul>
+        <li>นักพัฒนาเว็บไซต์/เซิฟเวอร์ด้วย HTML, CSS, JavaScript , C++ , C#</li>
+      </ul>
+    </section>
+
+    <section class="card animate">
+      <h2>การศึกษา</h2>
+      <p><strong>ระดับการศึกษา ประกาศนียบัตรวิชาชีพ แผนกคอมพิวเตอร์ธุรกิจ </strong><br>วิทยาลัยอาชีวศึกษาเมืองชัยภูมิ</p>
+    </section>
+
+    <section class="card animate">
+      <h2>ทักษะ</h2>
+      <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>React / Vue</li>
+        <li>Git / Figma / REST API</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    // Animation when scrolling
+    const sections = document.querySelectorAll('.animate');
+
+    const reveal = () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
+
+</body>
+</html>
